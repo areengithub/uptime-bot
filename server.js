@@ -3,7 +3,7 @@ require("express")().listen(1343);
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("token");
+client.login("NzU0ODA3ODA4OTk3ODUxMjk4.X16HjQ.iX-ptyOcYA3ZhiwNK9T_vZ2yUyg");
 const fetch = require("node-fetch");
 const fs = require('fs')
 
@@ -26,7 +26,7 @@ db.set("linkler", [])
 })
 
 client.on("ready", () => {
-  client.user.setActivity(`u.help | ${db.get("linkler").length} / ${client.guilds.size}`)
+  client.user.setActivity(`W!help | BY <END/WEB> | ${db.get("linkler").length} / ${client.guilds.size}`)
   console.log(`Logined`)
 })
 
@@ -34,7 +34,7 @@ client.on("ready", () => {
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "u.add") {
+  if(spl[0] == "W!host") {
   var link = spl[1]
   fetch(link).then(() => {
     if(db.get("linkler").map(z => z.url).includes(link)) return message.channel.send("<:asuna_no:732219380795965471> Already Available!")
@@ -50,7 +50,7 @@ client.on("message", message => {
 client.on("message", message => {
   if(message.author.bot) return;
   var spl = message.content.split(" ");
-  if(spl[0] == "u.say") {
+  if(spl[0] == "W!botsonline") {
   var link = spl[1]
  message.channel.send(`${db.get("linkler").length} / ${client.guilds.size}`)
 }})
@@ -62,7 +62,7 @@ const Discord = require('discord.js');
 client.on("message", message => {
   if(message.author.bot) return;
     var spl = message.content.split(" ");
-  if(spl[0] == "u.help") {
+  if(spl[0] == "W!help") {
 let embed = new Discord.RichEmbed()
 .setColor('#4ca74c')
 .addField(`Uptime Bot v1.0 Help`, `Includes a system that keeps uptime bot glitch sites open 24/7. The links in the system operate 24/7 without any maintenance.`)
@@ -77,7 +77,7 @@ let embed = new Discord.RichEmbed()
 [Support Server](https://discord.gg/axczJaR)`)
 .setThumbnail(client.user.avatarURL)
 .setAuthor(`Uptime`, client.user.avatarURL)
-.setFooter(`2020 © Uptime | by Eleven.`, client.user.avatarURL)
+.setFooter(`2020 © <𝐄/𝐖> HOATING BOT | by <𝐄/𝐖> ᵏᵃᵏ AREEN☠.`, client.user.avatarURL)
 return message.channel.send(embed);
     }
  
